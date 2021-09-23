@@ -1,0 +1,23 @@
+{% extends 'registration/home.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+{% if user.is_admin %}
+
+<div class="container" style="width: 60%">
+  <form method="POST" class="jumbotron">
+    {% csrf_token %}
+    <h5>
+      Are you sure to delete This Student ?
+    </h5>
+    <br />
+    <input type="submit" value="Delete" class="btn btn-danger" />
+
+  </form>
+</div>
+
+{% else %}
+
+<h5>Enter Login Details</h5>
+{% endif %}
+{% endblock %}
